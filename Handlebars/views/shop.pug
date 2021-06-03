@@ -1,0 +1,21 @@
+extends layouts/main-layout.pug 
+block style
+    link(rel="stylesheet", href="/css/product.css")
+block content
+    main
+        if prods.length > 0
+            .grid
+                each product in prods
+                    article.card.product-item
+                        header.card__header
+                            h1.product__title #{product.title}
+                        div.card__image
+                            img(src="https://cla.umn.edu/sites/cla.umn.edu/files/styles/feature_story_article/public/booksonyellowbg-istock_000045605594_full_optimized.jpg?itok=__NCfvH4&c=f77a6ddb25454d443270a49889464590", alt="A Book")
+                        div.card__content
+                            h2.product__price $19.99
+                            p.product__description A very interesting book about so many even more interesting things!
+                        .card__actions
+                            button.btn Add to Cart
+        
+        else 
+            h1 No Products                    
